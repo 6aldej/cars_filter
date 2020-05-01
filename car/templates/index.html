@@ -1,8 +1,6 @@
 Добро пожаловать в {{ title }}  <br>.
-Тут собрано {{ cars_count }} автомобилей.
 
-
-<form action="{% url 'get_context_data' %}">
+<form action="{% url "main" %}">
     <input type="text" name="manufacturer" placeholder="производитель">
     <input type="text" name="model" placeholder="модель">
     <input type="number" name="year" placeholder="год выпуска">
