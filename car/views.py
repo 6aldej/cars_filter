@@ -11,11 +11,9 @@ def car_list(request):
 
 def index(request):
     template = loader.get_template('index.html')
-    cars_count = Car.objects.all().count()
     cars = Car.objects.all()
     car_data = {
         "title": "Наши автомобили",
-        "cars_count": cars_count,
         "cars": cars,
     }
     return HttpResponse(template.render(car_data))
