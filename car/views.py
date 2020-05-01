@@ -19,7 +19,7 @@ def index(request):
     return HttpResponse(template.render(car_data))
 
 class CarsView(TemplateView):
-    template_name = "car/templates/index.html"
+    template_name = "index.html"
 
     def get_context_data(self, **kwargs):
         params = self.request.GET
