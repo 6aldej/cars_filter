@@ -1,0 +1,29 @@
+Добро пожаловать в {{ title }}  <br>.
+Тут собрано {{ cars_count }} автомобилей.
+
+
+<form action="{% url 'get_context_data' %}">
+    <input type="text" name="manufacturer" placeholder="производитель">
+    <input type="text" name="model" placeholder="модель">
+    <input type="number" name="year" placeholder="год выпуска">
+    <select name="kpp">
+      <option value="" selected>Выберите коробку передач</option>
+      <option value="0">Механика</option>
+      <option value="1">Автомат</option>
+      <option value="2">Робот</option>
+    </select>
+    <input type="text" name="color" placeholder="цвет">
+    <input type="submit">
+</form>
+
+<table border="1">
+    {% for car in cars %}
+    <tr>
+        <td>{{ car.manufacturer }}</td>
+        <td>{{ car.model }}</td>
+        <td>{{ car.year }}</td>
+        <td>{{ car.kpp }}</td>
+        <td>{{ car.color }}</td>
+    </tr>
+    {% endfor %}
+</table>
